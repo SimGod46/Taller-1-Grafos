@@ -1,0 +1,74 @@
+<NombreNodoSource>:
+    elevation:10
+    md_bg_color: 1,1,1,1
+    radius: [10,10,10,10]
+    size_hint: 0.5,0.5
+    padding:5
+    pos_hint: {"center_x": 0.5,"center_y": 0.5}
+    MDTextField:
+        id: sourceName
+        pos_hint: {"center_x": 0.5,"center_y": 0.5}
+        color_mode: 'custom'
+        line_color_focus: 0, 0, 0, 1
+        halign:'center'
+        valign:'center'
+        text: ''
+        hint_text: 'Nombre nodo incial'
+        active_line:False
+        mode: 'fill'
+        fill_color: 1,1,1,0
+        font_size:30
+
+<VistaScroll>:
+    size_hint:0.25,0.3
+    MDCard:
+        radius: [0,0,10,10]
+        elevation:0
+        md_bg_color: 1,1,1,1
+        pos_hint: {"center_x": 0.5,"center_y": 0.5}
+        ScrollView:
+            BoxLayout:
+                orientation: 'vertical'
+                id: contenedor
+                size_hint_x: 1
+                size_hint_y: None
+                height: self.minimum_height+5
+                padding:[30,0,30,10]
+                spacing:20
+
+<AddButton>:
+    elevation:0
+    md_bg_color: 0.5,0.5,0.5, 1
+    radius: [10,10,10,10]
+    size_hint: 0.3,0.65
+    pos_hint: {"center_x": 1,"center_y": 0.5}
+    padding:5
+    on_press:
+        self.md_bg_color = 174/255, 174/255, 174/255, 1
+    on_release:
+        self.md_bg_color = 0.5,0.5,0.5, 1
+        app.buttonPress('Add')
+    FloatLayout:
+        MDCard:
+            elevation:0
+            md_bg_color: 1,1,1, 1
+            radius: 5
+            size_hint: 0.526,0.125
+            pos_hint: {"center_x": 0.5,"center_y": 0.5}
+            padding:5
+        MDCard:
+            elevation:0
+            md_bg_color: 1,1,1, 1
+            radius: 5
+            size_hint: 0.1,0.75
+            pos_hint: {"center_x": 0.5,"center_y": 0.5}
+            padding:5
+
+<Label>:
+    font_name: 'Resources/coolvetica rg.ttf'
+<Content>:
+    adaptive_height: True
+<LowerContent>:
+    adaptive_height: True
+    cols:1
+    id: SubList

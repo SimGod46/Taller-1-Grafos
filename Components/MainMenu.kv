@@ -1,0 +1,114 @@
+<MainMenuScreen>:
+    canvas.before:
+        Color: 
+            rgba: 1,1,1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FitImage:
+        source:"Resources/background.jpg"
+    FloatLayout:
+        id:BaseLayout
+        MDCard:
+            orientation:'vertical'
+            elevation: 10
+            md_bg_color: 1,1,1,1
+            radius: [10,10,10,10]
+            padding:5            
+            pos_hint: {"center_x": 0.5,"center_y": 0.5}
+            size_hint: 0.75,0.75
+            GridLayout:
+                cols:1
+                rows:5
+                BoxLayout:
+                    size_hint_y:0.4
+                    orientation:'vertical'
+                    BoxLayout:
+                        size_hint_y: 0.4
+                        padding:[20,0,0,0]
+                        MDLabel:
+                            text:'Seleccionar una opción:'
+                            color:'black'
+                            halign:'center'
+                            font_size: 40
+                    
+                AnchorLayout:
+                    MDCard:
+                        elevation:5
+                        md_bg_color: 38/255,169/255,225/255, 1
+                        radius: [10,10,10,10]
+                        size_hint: 0.5,0.45
+                        pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                        padding:5
+                        on_press:
+                            self.md_bg_color = 174/255, 174/255, 174/255, 1
+                        on_release:
+                            self.md_bg_color = 38/255,169/255,225/255, 1
+                            app.main('1')
+                        MDLabel:
+                            halign:'center'
+                            valign:'center'
+                            text:'Crear grafo'
+                            color:'white'
+                            pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                            font_size:30
+                AnchorLayout:
+                    MDCard:
+                        elevation:5
+                        md_bg_color: 38/255,169/255,225/255, 1
+                        radius: [10,10,10,10]
+                        size_hint: 0.5,0.45
+                        pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                        padding:5
+                        on_press:
+                            self.md_bg_color = 174/255, 174/255, 174/255, 1
+                        on_release:
+                            self.md_bg_color = 38/255,169/255,225/255, 1
+                            app.main('2')
+                        MDLabel:
+                            halign:'center'
+                            valign:'center'
+                            text:'Aplicar Dijkstra'
+                            color:'white'
+                            pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                            font_size:30
+                AnchorLayout:
+                    MDCard:
+                        elevation:5
+                        md_bg_color: 38/255,169/255,225/255, 1
+                        radius: [10,10,10,10]
+                        size_hint: 0.5,0.45
+                        pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                        padding:5
+                        on_press:
+                            self.md_bg_color = 174/255, 174/255, 174/255, 1
+                        on_release:
+                            self.md_bg_color = 38/255,169/255,225/255, 1
+                            app.main('3')
+                        MDLabel:
+                            halign:'center'
+                            valign:'center'
+                            text:'Aplicar Kruskal'
+                            color:'white'
+                            pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                            font_size:30
+                AnchorLayout:
+                    MDCard:
+                        elevation:5
+                        md_bg_color: 38/255,169/255,225/255, 1
+                        radius: [10,10,10,10]
+                        size_hint: 0.5,0.45
+                        pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                        padding:5
+                        on_press:
+                            self.md_bg_color = 174/255, 174/255, 174/255, 1
+                        on_release:
+                            self.md_bg_color = 38/255,169/255,225/255, 1
+                            app.main('4')
+                        MDLabel:
+                            halign:'center'
+                            valign:'center'
+                            text:'Salir'
+                            color:'white'
+                            pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                            font_size:30

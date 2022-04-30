@@ -1,0 +1,179 @@
+<GraphCreationScreen>:
+    canvas.before:
+        Color: 
+            rgba: 1,1,1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        id:BaseLayout
+        GridLayout:
+            cols:1
+            rows:3
+            BoxLayout:
+                size_hint_y:0.25
+                orientation:'vertical'
+                BoxLayout:
+                    size_hint_y: 0.4
+                    padding:[20,0,0,0]
+                    MDLabel:
+                        text:'Ingresar elementos:'
+                        color:'black'
+                        halign:'left'
+                        font_size: 40
+            GridLayout:
+                cols: 2
+                rows:1
+                AnchorLayout:
+                    size_hint_y: 0.5
+                    ScrollView: 
+                        size_hint_x:0.75
+                        MDGridLayout:
+                            adaptive_height: True
+                            cols:1
+                            id: FoundList
+                            OneLineListItem:
+                                text: "(Nodo 1 , Nodo 2 , Peso)"
+                
+                MDBoxLayout:
+                    padding:[0,0,40,0]
+                    orientation:'vertical'
+                    MDBoxLayout:
+                        MDCard:
+                            size_hint_y:0.5
+                            orientation:'vertical'
+                            MDTextField:
+                                size_hint_y:None
+                                id: nombreExcel
+                                pos_hint: {"center_x": 0.5,"center_y": 1}
+                                halign:'center'
+                                valign:'center'
+                                font_size:40
+                                text: ''
+                                hint_text:'Nombre Excel'
+                                active_line:False
+                                color_mode: 'accent'
+                                mode:'fill'
+                    MDBoxLayout:
+                        MDCard:
+                            size_hint_y:0.6
+                            orientation:'vertical'
+                            MDTextField:
+                                size_hint_y:None
+                                id: nombreSubida
+                                pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                                halign:'center'
+                                valign:'center'
+                                font_size:40
+                                text: ''
+                                hint_text:'  nodo1,nodo2,peso'
+                                active_line:False
+                                color_mode: 'accent'
+                                on_text_validate:
+                                    app.confirmName()
+                            AnchorLayout:
+                                size_hint_y:0.15
+                                MDIconButton:
+                                    icon:'check'
+                                    on_release:
+                                        app.confirmName()
+            GridLayout:
+                size_hint_y:0.308
+                padding:10
+                spacing:10
+                rows:1
+                cols:2
+                AnchorLayout:
+                    MDCard:
+                        elevation:5
+                        md_bg_color: 38/255,169/255,225/255, 1
+                        radius: [10,10,10,10]
+                        size_hint: 0.75,0.4
+                        pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                        padding:5
+                        on_press:
+                            self.md_bg_color = 174/255, 174/255, 174/255, 1
+                        on_release:
+                            self.md_bg_color = 38/255,169/255,225/255, 1
+                            app.return_home()
+                        MDLabel:
+                            halign:'center'
+                            valign:'center'
+                            text:'volver'
+                            color:'white'
+                            pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                            font_size:30
+                AnchorLayout:
+                    MDCard:
+                        elevation:5
+                        md_bg_color: 38/255,169/255,225/255, 1
+                        radius: [10,10,10,10]
+                        size_hint: 0.75,0.4
+                        pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                        padding:5
+                        on_press:
+                            self.md_bg_color = 174/255, 174/255, 174/255, 1
+                        on_release:
+                            self.md_bg_color = 38/255,169/255,225/255, 1
+                            app.confirmacionCreacion()
+                        MDLabel:
+                            halign:'center'
+                            valign:'center'
+                            text:'aceptar'
+                            color:'white'
+                            pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                            font_size:30
+<DoneScreen>:
+    canvas.before:
+        Color: 
+            rgba: 1,1,1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation:'vertical'
+        padding: [0,0,0,20]
+        spacing: 10 
+        MDLabel:
+            size_hint_y:0.183
+            text:'Matriz creada'
+            color: 'black'
+            font_size:50
+            halign:'center'
+            valign:'center'
+        AnchorLayout:
+            size_hint_y:0.46666
+            MDCard:
+                elevation:0
+                md_bg_color: 21/255,207/255,118/255, 1
+                radius: [10,10,10,10]
+                size_hint: 0.3,0.65
+                pos_hint: {"center_x": 1,"center_y": 0.5}
+                padding:5
+                Image:
+                    source: 'Resources/check-white.png'
+                    size: self.texture_size
+        AnchorLayout:
+            size_hint_y:0.35
+            MDCard:
+                elevation:0
+                md_bg_color: 127/255,90/255,240/255, 1
+                radius: [10,10,10,10]
+                size_hint: 0.4,0.4
+                pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                padding:5
+                on_press:
+                    self.md_bg_color = 174/255, 174/255, 174/255, 1
+                on_release:
+                    self.md_bg_color = 127/255,90/255,240/255, 1
+                    app.return_home()
+                MDLabel:
+                    halign:'center'
+                    valign:'center'
+                    text:'inicio'
+                    color:'white'
+                    pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                    font_size:30
+#(27.5, 44.13827655310621)
+#(14.375, 42.5)
+            

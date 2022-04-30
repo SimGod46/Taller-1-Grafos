@@ -1,0 +1,95 @@
+<PreUpScreen>:
+    canvas.before:
+        Color: 
+            rgba: 1,1,1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        id:BaseLayout
+        GridLayout:
+            cols:1
+            rows:3
+            BoxLayout:
+                size_hint_y:0.425
+                orientation:'vertical'
+                BoxLayout:
+                    size_hint_y: 0.4
+                    padding:[20,0,0,0]
+                    MDLabel:
+                        text:'Seleccionar archivo excel:'
+                        color:'black'
+                        halign:'center'
+                        font_size: 40
+                MDCard:
+                    elevation:10
+                    md_bg_color: 1,1,1,1
+                    radius: [10,10,10,10]
+                    size_hint: 0.75,0.2
+                    padding:5
+                    pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                    MDTextField:
+                        id: pathExcel
+                        pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                        color_mode: 'custom'
+                        line_color_focus: 0, 0, 0, 1
+                        halign:'center'
+                        valign:'center'
+                        text: ''
+                        hint_text:'ruta/a/excel'
+                        active_line:False
+                        mode: 'fill'
+                        fill_color: 1,1,1,0
+                        font_size:40
+            MDBoxLayout:
+                size_hint_y:0.2
+                orientation:'horizontal'
+                AnchorLayout:
+                    id:extaButton
+
+            GridLayout:
+                size_hint_y:0.308
+                padding:10
+                spacing:10
+                rows:1
+                cols:2
+                AnchorLayout:
+                    MDCard:
+                        elevation:5
+                        md_bg_color: 38/255,169/255,225/255, 1
+                        radius: [10,10,10,10]
+                        size_hint: 0.75,0.4
+                        pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                        padding:5
+                        on_press:
+                            self.md_bg_color = 174/255, 174/255, 174/255, 1
+                        on_release:
+                            self.md_bg_color = 38/255,169/255,225/255, 1
+                            app.return_home()
+                        MDLabel:
+                            halign:'center'
+                            valign:'center'
+                            text:'volver'
+                            color:'white'
+                            pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                            font_size:30
+                AnchorLayout:
+                    MDCard:
+                        elevation:5
+                        md_bg_color: 38/255,169/255,225/255, 1
+                        radius: [10,10,10,10]
+                        size_hint: 0.75,0.4
+                        pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                        padding:5
+                        on_press:
+                            self.md_bg_color = 174/255, 174/255, 174/255, 1
+                        on_release:
+                            self.md_bg_color = 38/255,169/255,225/255, 1
+                            app.confirmacionAlgoritmo()
+                        MDLabel:
+                            halign:'center'
+                            valign:'center'
+                            text:'aceptar'
+                            color:'white'
+                            pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                            font_size:30

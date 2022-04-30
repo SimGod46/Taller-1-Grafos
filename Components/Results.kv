@@ -1,0 +1,42 @@
+<SolvedScreen>:
+    canvas.before:
+        Color: 
+            rgba: 1,1,1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation:'vertical'
+        padding: [0,0,0,20]
+        spacing: 10 
+        MDLabel:
+            size_hint_y:0.183
+            text:'Resultados:'
+            color: 'black'
+            font_size:50
+            halign:'center'
+            valign:'center'
+        AnchorLayout:
+            size_hint_y:0.46666
+            id: GrafoImagen
+        AnchorLayout:
+            size_hint_y:0.35
+            MDCard:
+                elevation:0
+                md_bg_color: 38/255,169/255,225/255, 1
+                radius: [10,10,10,10]
+                size_hint: 0.4,0.4
+                pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                padding:5
+                on_press:
+                    self.md_bg_color = 174/255, 174/255, 174/255, 1
+                on_release:
+                    self.md_bg_color = 38/255,169/255,225/255, 1
+                    app.return_home()
+                MDLabel:
+                    halign:'center'
+                    valign:'center'
+                    text:'inicio'
+                    color:'white'
+                    pos_hint: {"center_x": 0.5,"center_y": 0.5}
+                    font_size:30
